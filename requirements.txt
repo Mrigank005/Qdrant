@@ -1,0 +1,26 @@
+# Core requirements
+aiofiles
+asyncio
+psutil
+python-dotenv
+PyYAML
+tqdm
+uuid
+
+# Document processing
+langchain
+PyPDF2
+python-docx
+pandas
+
+# Vector database
+qdrant-client
+
+# Machine Learning
+sentence-transformers
+spacy
+
+# Optional (for specific functionality)
+numpy
+scipy
+scikit-learn

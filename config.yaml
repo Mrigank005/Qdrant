@@ -1,0 +1,94 @@
+# Qdrant Database Configuration
+qdrant:
+  host: "localhost"
+  port: 6333
+  prefer_grpc: false
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1.0
+
+# Embedding Model Configuration
+model:
+  name: "all-MiniLM-L6-v2"  # Options: all-MiniLM-L6-v2, all-mpnet-base-v2, etc.
+  device: "cpu"             # Options: cpu, cuda, mps
+  cache_folder: "./models"
+  max_seq_length: 512
+
+# Document Processing Configuration
+processing:
+  chunk_size: 500
+  chunk_overlap: 50
+  batch_size: 32
+  max_file_size_mb: 100
+  max_workers: 4
+  memory_limit_mb: 1024
+  upload_batch_size: 100
+  supported_extensions:
+    - ".txt"
+    - ".md" 
+    - ".csv"
+    - ".json"
+    - ".py"
+    - ".pdf"
+    - ".docx"
+    - ".js"
+    - ".html"
+
+# Search Configuration
+search:
+  default_limit: 5
+  max_limit: 50
+  cache_size: 1000
+  cache_ttl: 3600  # seconds
+  default_weights:
+    semantic: 0.7
+    keyword: 0.3
+
+# Logging Configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: "qdrant_operations.log"
+  max_size_mb: 10
+  backup_count: 5
+  console_output: true
+
+# Security Configuration
+security:
+  max_payload_size_mb: 50
+  max_query_length: 1000
+  sanitize_content: true
+  sanitize_queries: true
+  allowed_mime_types:
+    - "text/plain"
+    - "text/markdown"
+    - "text/csv"
+    - "application/json"
+    - "text/x-python"
+    - "application/pdf"
+    - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    - "text/javascript"
+    - "text/html"
+
+input_dir: "D:\\AI-ML\\Qdrant\\Input"
+
+# Performance Tuning
+performance:
+  enable_gpu_acceleration: false
+  parallel_processing: true
+  memory_mapping: false
+  connection_pooling: true
+
+# Monitoring & Analytics
+monitoring:
+  enable_metrics: true
+  metrics_retention_days: 30
+  health_check_interval: 300  # seconds
+  performance_tracking: true
+
+# Advanced Features
+advanced:
+  auto_collection_cleanup: false
+  duplicate_detection: true
+  content_deduplication: true
+  auto_backup: false
+  backup_schedule: "daily"
