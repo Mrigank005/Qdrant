@@ -69,7 +69,7 @@ security:
     - "text/javascript"
     - "text/html"
 
-input_dir: "D:\\AI-ML\\Qdrant\\Input"
+input_dir: "your-file-path-here"
 
 # Performance Tuning
 performance:
@@ -91,4 +91,5 @@ advanced:
   duplicate_detection: true
   content_deduplication: true
   auto_backup: false
+
   backup_schedule: "daily"
